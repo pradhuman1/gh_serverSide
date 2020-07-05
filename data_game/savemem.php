@@ -46,11 +46,30 @@
                 $query_run = mysqli_query($connection,$query);
                 if(mysqli_num_rows($query_run)>0){
                     while($row = mysqli_fetch_assoc($query_run)){
+                        $name = $row['name'];
+                        $roll_no = $row['roll_no'];
+                        $image = $row['image'];
+                        $des = $row['description'];
+                        $member_id = $row['member_id'];
+                        $hof = $row['hof'];
+                        $social_handles = $row['social_handles'];
+                        $post = $row['post'];
+                        $wing = $row['wing'];
+                        $session = $row['session'];
                         $cred_id =$row['cred_id'];
                     }
+                    echo $name;
                     $query = "DELETE FROM credentials WHERE `credentialsID`='$cred_id'";
                     $query_run = mysqli_query($connection,$query);
-                    header('location:../geekhaven/addmember.php');
+                    
+                    $query = "DELETE FROM member WHERE `name`='$name'";
+                    $query_run = mysqli_query($connection,$query);
+
+                    $query = "INSERT INTO past_members VALUES ('$name', '$roll_no', '$image', '$des', '$member_id', '$hof', '$social_handles', '$post', '$wing', '$session')";
+                    $query_run = mysqli_query($connection,$query);
+                    
+                    echo $query;
+                    // header('location:../geekhaven/addmember.php');
                 }else{
                     echo "CANNOT REMOVE";
                 }

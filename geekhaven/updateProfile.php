@@ -64,5 +64,9 @@
         <form method='post' action="social_handles.php">
             <input name="handle" type="submit" value="Social Handles"></input>
         </form>
+        <br><br>
+        <form method= 'post' action='home.php'>
+            <input type='submit' value='home'>
+        </form>
     </body>
 </html>
