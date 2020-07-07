@@ -51,7 +51,7 @@
                 $_SESSION['wingID'] = $wingID;
                 $member_id = $_SESSION['member_id'];
                 ?>
-                <form method="post" action='../data_game/saveblog.php'>
+                <form method="post" action='../data_game/saveblog.php' enctype="multipart/form-data">
                 <label>Blog Title</label>
                 <input value="<?php echo $wingID; ?>" name="wing_id" style="display:none" ></input>
                 <input name="blog_title" type="text" placeholder="Blog Title" require ></input><br>
@@ -60,7 +60,7 @@
                 <label>Blog Link</label>            
                 <input name="blog_link" type="text" placeholder="Blog Link" ></input><br>
                 <label>Image</label>            
-                <input name="image" type="text" placeholder="Image" ></input><br>
+                <input name="image" type="file" placeholder="Image" ></input><br>
                 <input name="add_blog" type="submit" value="Add Blog" ></input>
             </form>
                 <?php

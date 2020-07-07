@@ -29,6 +29,10 @@
             <input type="submit" value="Add Admin">
         </form>
         <br>
+        <form action='makehof.php'>
+            <input type="submit" value="Manage HOF">
+        </form>
+        <br>
 
         <form action='updateProfile.php'>
             <input type="submit" value="Update My Profile">

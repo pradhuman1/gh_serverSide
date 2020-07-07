@@ -69,9 +69,16 @@
                     $query_run = mysqli_query($connection,$query);
                     
                     echo $query;
-                    // header('location:../geekhaven/addmember.php');
+                    header('location:../geekhaven/addmember.php');
                 }else{
                     echo "CANNOT REMOVE";
                 }
+            }
+
+            if(isset($_POST['remove_past_mem_btn'])){
+                $name = $_POST['past_members'];
+                $query = "DELETE FROM past_members WHERE `name`='$name'";
+                $query_run = mysqli_query($connection,$query);
+                header('location:../geekhaven/addmember.php');
             }
 ?>

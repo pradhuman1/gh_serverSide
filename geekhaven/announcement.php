@@ -23,7 +23,7 @@
     </head>
     <body>
         <h2>Add announcement</h2>
-        <form method='post' action='../data_game/announce.php'>
+        <form method='post' action='../data_game/announce.php' enctype="multipart/form-data">
             <label>Announcement Title</label>
             <input name="name" type="text" placeholder="Title" require></input><br>
             <label>Organiser</label>            
@@ -43,7 +43,7 @@
             <label>Attachment</label>            
             <input name="attach" type="text" placeholder="attachment" ></input><br>
             <label>Image</label>            
-            <input name="image" type="text" placeholder="image" ></input><br>
+            <input name="image" type="file" placeholder="image" ></input><br>
 
             <input name="submit" type="submit" value="Submit"></input>
         </form>

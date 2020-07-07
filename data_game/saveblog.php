@@ -12,7 +12,7 @@
                     $blog_title = $_POST['blog_title'];
                     $blog_link = $_POST['blog_link'];
                     $des = $_POST['description'];
-                    $image = $_POST['image'];
+                    $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
                     $query = " INSERT INTO blogs VALUES('$wingID','$member_id','$blog_title','$des','$blog_link','$image')";
                     $query_run = mysqli_query($connection,$query);
                     header('location:../geekhaven/blog.php');

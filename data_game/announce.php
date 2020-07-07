@@ -14,7 +14,7 @@
                 $details = $_POST['details'];
                 $link = $_POST['link'];
                 $attach = $_POST['attach'];
-                $image = $_POST['image'];
+                $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
                 $query = "SELECT * FROM announcements WHERE `name`='$name'";
                 $query_run = mysqli_query($connection,$query);
                 if(mysqli_num_rows($query_run)>0){

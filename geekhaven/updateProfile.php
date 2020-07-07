@@ -34,13 +34,13 @@
                 $des =$row['description']; 
             }
         ?>
-        <form method='post' action='../data_game/profileupdate.php'>
+        <form method='post' action='../data_game/profileupdate.php' enctype="multipart/form-data">
             <label>Name</label>
             <input name="name" type="text" placeholder="Name" value="<?php echo $name;?>"require></input><br>
             <label>Roll Number</label>            
             <input name="roll_no" type="text" placeholder="roll Number" value="<?php echo $roll;?>"require></input><br>
             <label>Image</label>            
-            <input name="image" type="text" placeholder="image" value="<?php echo $image;?>"></input><br>
+            <input name="image" type="file" placeholder="image"></input><br>
             <label>Description</label>            
             <input name="description" type="text" placeholder="description" value="<?php echo $des;?>"></input><br>
             <input name="submit" type="submit" value="Save"></input>

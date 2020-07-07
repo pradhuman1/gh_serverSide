@@ -29,12 +29,23 @@
             <input name="password" type="password" placeholder=password require></input><br>
             <label>Confirm Password</label>            
             <input name="cpassword" type="password" placeholder="confirm password" require></input><br>
-            <label>Member Post</label>            
-            <input name="mem_post" type="text" placeholder="Post" require></input><br>
             <label>Session</label>            
             <input name="session" type="text" placeholder="Session" require></input><br>
             <label>Wing</label>            
-            <input name="wing" type="text" placeholder="Wing" require></input><br>
+            <select name="wing">
+                <option selected="selected">Choose one</option>
+                <?php
+                    $query = 'SELECT * FROM wings';
+                    $result = mysqli_query($connection,$query);
+                    while($row = mysqli_fetch_assoc($result)){
+                        $wing =$row['wing'];
+                        ?>
+                        <option value="<?php echo $wing; ?>"><?php echo $wing; ?></option>
+                        <?php
+                    }
+                ?>
+                <br>
+            </select><br>
             <input name="add_btn" type="submit" value="add member"></input>
             <?php
 
@@ -66,6 +77,28 @@
 
         </form>
         <br><br>
+
+        <h2>Remove Past Member</h2>
+        <form method="post" action='../data_game/savemem.php'>  
+            <select name="past_members">
+                    <option selected="selected">Choose one</option>
+                    <?php
+                        $query = 'SELECT * FROM past_members';
+                        $result = mysqli_query($connection,$query);
+                        while($row = mysqli_fetch_assoc($result)){
+                            $name =$row['name'];
+                            ?>
+                            <option value="<?php echo $name; ?>"><?php echo $name; ?></option>
+                            <?php
+                        }
+                    ?>
+                    <br>
+                <input name="remove_past_mem_btn" type="submit" value="Remove"> </input><br>   
+            </select>
+
+        </form>
+        <br><br>
+
         <form method= 'post' action='home.php'>
             <input type='submit' value='home'>
         </form>

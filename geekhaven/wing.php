@@ -22,16 +22,19 @@
         <h1>Add Wing</h1>
     </head>
     <body>
-    <form method="post" action='../data_game/savewing.php'>  
+    <form method="post" action='../data_game/savewing.php' enctype="multipart/form-data">  
         <label>Wing Name</label>
         <input name="wing" type="text" placeholder="wing name" require></input><br>
         <label>Information</label>            
         <input name="info" type="text" placeholder=information require></input><br>
         <label>Logo</label>            
-        <input name="logo" type="text" placeholder="logo" require></input><br>
+        <input name="logo" type="file" placeholder="logo" require></input><br>
         <input name="add_btn" type="submit" value="Add Wing"></input>
     </form>
     <br><br>
+    <?php
+    ?>
+
 
     <h1>Update/Remove Wing</h1>
     <br>
@@ -65,16 +68,16 @@
                 $_SESSION['wingID'] = $wing_id;            
                 $wing =$row['wing'];
                 $info =$row['info'];
-                $logo =$row['logo'];    
             }
             ?>
-            <form method='post' action='../data_game/savewing.php'>
+            <form method='post' action='../data_game/savewing.php' enctype="multipart/form-data">
                 <label>Wing Name</label>
                 <input name="new_wing" type="text" placeholder="wing name" value="<?php echo $wing; ?>" require ></input><br>
                 <label>Information</label>            
                 <input name="new_info" type="text" placeholder=information value="<?php echo $info; ?>"></input><br>
                 <label>Logo</label>            
-                <input name="new_logo" type="text" placeholder="logo" value="<?php echo $logo; ?>"></input><br>
+                <input name="new_logo" type="file" placeholder="logo"></input><br>
+                <br>
                 <input name="update_btn" type="submit" value="Update Wing"></input>
                 <input name="remove_btn" type="submit" value="Remove Wing"></input>
                 

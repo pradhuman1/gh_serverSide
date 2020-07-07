@@ -50,7 +50,7 @@
                 $wingID = $_POST['wings'];
                 $_SESSION['wingID'] = $wingID;
                 ?>
-                <form method="post" action='../data_game/projectdata.php'>
+                <form method="post" action='../data_game/projectdata.php' enctype="multipart/form-data">
                 <label>Project Name</label>
                 <input name="project_name" type="text" placeholder="Project name" require ></input><br>
                 <label>Project Link</label>            
@@ -62,7 +62,7 @@
                 <label>Description</label>            
                 <input name="description" type="text" placeholder="Description" ></input><br>
                 <label>Image</label>            
-                <input name="image" type="text" placeholder="Image" ></input><br>
+                <input name="image" type="file" placeholder="Image" ></input><br>
                 <input name="add_project" type="submit" value="Add a Project" ></input>
             </form>
                 <?php
